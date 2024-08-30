@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <Section>
-        {/* {loading && <Loader/>} */}
+        {/* {loading && <Loader />} */}
         <h1 className="title">Phonebook</h1>
         <ContactForm />
         <SearchBox />
