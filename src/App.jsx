@@ -6,6 +6,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import ContactForm from "./components/ContactForm/ContactForm";
 import { useDispatch } from "react-redux";
 import { fetchContacts } from "./redux/contactsOps";
+// import Loader from "./components/Loader/Loader";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <Section>
+        {/* {loading && <Loader/>} */}
         <h1 className="title">Phonebook</h1>
         <ContactForm />
         <SearchBox />
