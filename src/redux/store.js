@@ -23,7 +23,7 @@ export const store = configureStore({
   reducer: {
     // contacts: persistReducer(profilesConfig, contactsReducer),
     contacts: contactsReducer,
-    filter: filterReducer,
+    filters: filterReducer,
   },
   // middleware: (getDefaultMiddleware) =>
   //   getDefaultMiddleware({
