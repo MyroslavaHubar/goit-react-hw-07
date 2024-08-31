@@ -10,16 +10,7 @@ const INITIAL_STATE = {
 export const contactsSlice = createSlice({
   name: "contacts",
   initialState: INITIAL_STATE,
-  // reducers: {
-  // addContact: (state, action) => {
-  //   state.items.push(action.payload);
-  // },
-  // deleteContact: (state, action) => {
-  //   state.contacts.items = state.contacts.items.filter(
-  //     (contact) => contact.id !== action.payload
-  //   );
-  // },
-  // },
+
   extraReducers: (builder) =>
     builder
       .addCase(fetchContacts.pending, (state) => {
@@ -64,7 +55,4 @@ export const contactsSlice = createSlice({
 
 export const selectContacts = (state) => state.contacts.items;
 export const selectLoading = (state) => state.contacts.loading;
-
 export const contactsReducer = contactsSlice.reducer;
-// export const { addContact, deleteContact } = contactsSlice.actions;
-// export const { addContact } = contactsSlice.actions;
