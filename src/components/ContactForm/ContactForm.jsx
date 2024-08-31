@@ -1,9 +1,9 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { nanoid } from "nanoid";
+// import { nanoid } from "nanoid";
 import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 
 function ContactForm() {
   const dispatch = useDispatch();
@@ -26,13 +26,13 @@ function ContactForm() {
       .matches(phoneRegExp, "Enter the number in the format 'xxx-xx-xx"),
   });
 
-  function handleSubmit(values, actions) {
-    const newContact = {
-      id: nanoid(),
-      ...values,
-    };
+  function handleSubmit(contact, actions) {
+    // const newContact = {
+    //   id: nanoid(),
+    //   ...values,
+    // };
 
-    dispatch(addContact(newContact));
+    dispatch(addContact(contact));
     actions.resetForm();
   }
 

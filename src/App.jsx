@@ -4,12 +4,14 @@ import Section from "./components/Section/Section";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactForm from "./components/ContactForm/ContactForm";
-import { useDispatch } from "react-redux";
+import Loader from "./components/Loader/Loader";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "./redux/contactsOps";
-// import Loader from "./components/Loader/Loader";
+import { selectLoading } from "./redux/contactsSlice";
 
 function App() {
   const dispatch = useDispatch();
+  const loading = useSelector(selectLoading);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -18,7 +20,7 @@ function App() {
   return (
     <>
       <Section>
-        {/* {loading && <Loader />} */}
+        {loading && <Loader />}
         <h1 className="title">Phonebook</h1>
         <ContactForm />
         <SearchBox />
